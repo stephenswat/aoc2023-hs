@@ -8,6 +8,7 @@ maintainer:          "stephen@v25.nl"
 dependencies:
   - base >= 4.16 && < 5
   - parsec
+  - containers
 
 executables:
   aoc2023:
