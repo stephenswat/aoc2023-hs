@@ -7,6 +7,7 @@ maintainer:          "stephen@v25.nl"
 
 dependencies:
   - base >= 4.16 && < 5
+  - parsec
 
 executables:
   aoc2023:
