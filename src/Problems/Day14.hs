@@ -35,14 +35,8 @@ score g = sum . map (\y -> (maxY + 1) - y) . map snd . keys . Data.Map.filter (=
         (_, valY) = unzip . keys $ g
         maxY = maximum valY
 
-solveA :: Grid2D Tile -> Integer
-solveA = score . tiltGrid North
-
-solveB :: Grid2D Tile -> Integer
-solveB = score . iterateCyclic cycleGrid 1000000000
-
 solution :: Day
 solution = (
-        show . solveA . readGrid2DWith readTile,
-        show . solveB . readGrid2DWith readTile
+        show . score . tiltGrid North . readGrid2DWith readTile,
+        show . score . iterateCyclic cycleGrid 1000000000 . readGrid2DWith readTile
     )
