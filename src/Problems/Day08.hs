@@ -4,8 +4,8 @@ import Data.Maybe (fromJust)
 import Data.Map (Map, fromList, lookup, keys)
 import Text.Parsec (sepEndBy1, newline, string, many1, char, choice, letter)
 
-import Common.Solution (Day, notImplemented)
-import Common.Parse (AocInput, aocParse, integer)
+import Common.Solution (Day)
+import Common.Parse (AocInput, aocParse)
 
 data Direction = DirLeft | DirRight deriving (Eq, Show)
 
@@ -45,13 +45,15 @@ solveA (ds, mm) = go "AAA" . cycle $ ds
         go s (i:is)
             | s == "ZZZ" = 0
             | otherwise = 1 + (go (getNextPosition mm s i) is)
+        go _ _ = error "Empty list not accepted!"
 
 findCycle :: MoveMap -> String -> [Direction] -> Integer
 findCycle mm s ds = go s . cycle $ ds
     where
-        go s (i:is)
-            | last s == 'Z' = 0
-            | otherwise = 1 + (go (getNextPosition mm s i) is)
+        go p (i:is)
+            | last p == 'Z' = 0
+            | otherwise = 1 + (go (getNextPosition mm p i) is)
+        go _ _ = error "Empty list not accepted!"
 
 solveB :: ([Direction], MoveMap) -> Integer
 solveB (ds, mm) = foldl1 lcm [findCycle mm x ds | x <- keys mm, last x == 'A']
