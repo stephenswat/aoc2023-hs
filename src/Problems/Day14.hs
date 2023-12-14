@@ -1,8 +1,8 @@
 module Problems.Day14 (solution) where
 
-import Data.Map (keys, filter, insert, lookup, empty, filterWithKey)
+import Data.Map (keys, filter, insert, lookup, filterWithKey)
 
-import Common.Helper (runWhile)
+import Common.Helper (runWhile, iterateCyclic)
 import Common.Solution (Day)
 import Common.Geometry (Grid2D, readGrid2DWith)
 import Common.Cardinal (Direction (..), translate)
@@ -39,17 +39,7 @@ solveA :: Grid2D Tile -> Integer
 solveA = score . tiltGrid North
 
 solveB :: Grid2D Tile -> Integer
-solveB v = score . go (0 :: Integer) (1000000000 :: Integer) empty $ v
-    where
-        go i d m g
-            | i == d = g
-            | (Just k) <- l =
-                if (d - i) >= (i - k)
-                then go (i + ((d - i) `div` (i - k)) * (i - k)) d m g
-                else go (i + 1) d m (cycleGrid g)
-            | otherwise = go (i + 1) d (insert g i m) (cycleGrid g)
-            where
-                l = Data.Map.lookup g m
+solveB = score . iterateCyclic cycleGrid 1000000000
 
 solution :: Day
 solution = (
