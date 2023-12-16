@@ -2,7 +2,7 @@ module Common.Cardinal (Direction (..), Rotation (..), rotate, translate, opposi
 
 import Common.Geometry (Point2D)
 
-data Direction = North | West | South | East deriving (Eq, Show)
+data Direction = North | West | South | East deriving (Eq, Show, Ord)
 
 data Rotation = RotateLeft | RotateRight deriving (Eq, Show)
 
