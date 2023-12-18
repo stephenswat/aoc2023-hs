@@ -1,6 +1,7 @@
 module Common.Geometry where
 
-import Data.Map (Map, fromList)
+import Data.Map (Map, fromList, lookup, keys)
+import Data.List (intercalate)
 
 type Point2D = (Integer, Integer)
 type Point3D = (Integer, Integer, Integer)
@@ -53,6 +54,14 @@ readGrid2DWith f s = fromList
 
 readGrid2D :: Read a => String -> Grid2D a
 readGrid2D = readGrid2DWith (\c -> read (c:[]))
+
+showGrid2D :: Show a => Grid2D a -> String
+showGrid2D = showGrid2DWith (head . show)
+
+showGrid2DWith :: (Maybe a -> Char) -> Grid2D a -> String
+showGrid2DWith f g = intercalate "\n" [[f (Data.Map.lookup (x, y) g) | x <- [(minimum valX)..(maximum valX)]] | y <- [(minimum valY)..(maximum valY)]]
+    where
+        (valX, valY) = unzip . keys $ g
 
 manhattan :: Point2D -> Point2D -> Integer
 manhattan (x1, y1) (x2, y2) = (abs (x1 - x2)) + (abs (y1 - y2))
