@@ -10,6 +10,7 @@ dependencies:
   - parsec
   - containers
   - mtl
+  - pqueue
 
 executables:
   aoc2023:
