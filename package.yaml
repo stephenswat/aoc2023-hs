@@ -11,6 +11,7 @@ dependencies:
   - containers
   - mtl
   - pqueue
+  - lens
 
 executables:
   aoc2023:
