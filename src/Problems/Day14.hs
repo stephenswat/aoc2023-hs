@@ -4,7 +4,7 @@ import Data.Map (keys, filter, insert, findWithDefault)
 
 import Common.Helper (iterateCyclic)
 import Common.Solution (Day)
-import Common.Geometry (Grid2D, Point2D, readGrid2DWith)
+import Common.Geometry (Grid2D, readGrid2DWith)
 import Common.Cardinal (Direction (..), translate, opposite)
 
 data Tile = Moving | Fixed | Empty deriving (Eq, Show, Ord)
