@@ -21,3 +21,5 @@ executables:
       - -Wall
       - -Wcompat
       - -O3
+      - -rtsopts
+      - -with-rtsopts=-M2G
