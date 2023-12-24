@@ -22,3 +22,33 @@ example, to run the solution for day 1, execute the following command:
 ```bash
 $ stack run 1 input/Day01.txt
 ```
+
+## Status
+
+| Day | Status |
+| --- | --- |
+|   1 | ⭐⭐ |
+|   2 | ⭐⭐ |
+|   3 | ⭐⭐ |
+|   4 | ⭐⭐ |
+|   5 | ⭐⭐ |
+|   6 | ⭐⭐ |
+|   7 | ⭐⭐ (slow) | 
+|   8 | ⭐⭐ |
+|   9 | ⭐⭐ |
+|  10 | ⭐⭐ |
+|  11 | ⭐⭐ |
+|  12 | ⭐⭐ (slow) |
+|  13 | ⭐⭐ (slow) | 
+|  14 | ⭐⭐ (slow) |
+|  15 | ⭐⭐ |
+|  16 | ⭐⭐ (slow) |
+|  17 | ⭐⭐ (slow) |
+|  18 | ⭐⭐ |
+|  19 | ⭐⭐ |
+|  20 | ⭐⭐ (non-general solution) |
+|  21 | ⭐❌ |
+|  22 | ⭐⭐ (slow) |
+|  23 | ⭐⚠️ (brute forced) |
+|  24 | ❌❌ |
+|  24 | ❌❌ |
