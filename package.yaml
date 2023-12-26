@@ -12,6 +12,7 @@ dependencies:
   - mtl
   - pqueue
   - lens
+  - sbv
 
 executables:
   aoc2023:
