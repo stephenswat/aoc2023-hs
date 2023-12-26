@@ -47,7 +47,7 @@ $ stack run 1 input/Day01.txt
 |  18 | ⭐⭐ |
 |  19 | ⭐⭐ |
 |  20 | ⭐⭐ (non-general solution) |
-|  21 | ⭐❌ |
+|  21 | ⭐⭐ (slow) |
 |  22 | ⭐⭐ (slow) |
 |  23 | ⭐⚠️ (brute forced) |
 |  24 | ❌❌ |
