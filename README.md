@@ -51,4 +51,4 @@ $ stack run 1 input/Day01.txt
 |  22 | ⭐⭐ (slow) |
 |  23 | ⭐⚠️ (brute forced) |
 |  24 | ⭐⭐ (slow) |
-|  24 | ❌❌ |
+|  24 | ⭐⭐ (slow) |

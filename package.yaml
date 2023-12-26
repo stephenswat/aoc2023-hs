@@ -13,6 +13,8 @@ dependencies:
   - pqueue
   - lens
   - sbv
+  - fgl
+  - random
 
 executables:
   aoc2023:
